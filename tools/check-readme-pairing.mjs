@@ -58,7 +58,7 @@ const ZH_ORDER = [
   '5. 我们最弱的一格（连终点一起摆出来）',
   '6. 边界（明写不做的事）',
   '7. 怎么读这份材料 / 出处',
-  '8. 待定（需业主拍板）',
+  '8. 已定（2026-09-25 拍板）',
 ]
 
 /** Pairing table: `[enHeading | null, zhHeading | null]`. null = deliberately no counterpart. */
@@ -68,7 +68,7 @@ const MAP = [
   ['What is in this repository, and what is deliberately not', '0. 本仓放什么 / 不放什么'],
   ['Layout', '7. 怎么读这份材料 / 出处'],
   ['The demo, and what it does not show', null],
-  ['Status', '8. 待定（需业主拍板）'],
+  ['Status', '8. 已定（2026-09-25 拍板）'],
   ['License and attribution', null],
   [null, '2. 与相邻工作的关系'],
   [null, '2.1 空档在哪'],
