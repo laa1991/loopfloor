@@ -42,7 +42,7 @@ infrastructure that is harmless to copy.
 - **The gap → criterion → distillation chain** — it is bound to our internal measurement conventions; shipping it would produce something that looks reproducible and is not.
 - **Memory layers and memory stores** — they hold private material.
 - **Our internal criterion set** — the *shape* of a criterion can be shipped; *our* set is not.
-- **Persona core, prompt and knowledge injection** — unrelated to the engineering subject, and personal.
+- **Persona core, prompt and knowledge injection** — a lot worth going deeper into; glad to talk privately.
 - **Implementations of mechanisms such as compaction** — this repository says where each failure mode lands and by what criterion, not how anyone built it.
 - **Deployment paths, credentials, personal identifiers** — no exceptions.
 
