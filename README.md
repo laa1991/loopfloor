@@ -2,9 +2,9 @@
 
 **Long-horizon work: how it fails quietly — and how to make it speak up.**
 
-> [中文 README](README.md) · body of the material: [`docs/`](docs/) · fixed terminology: [`docs/GLOSSARY.zh-en.md`](docs/GLOSSARY.zh-en.md)
+> [中文 README](README.zh.md) · body of the material: [`docs/`](docs/) · fixed terminology: [`docs/GLOSSARY.zh-en.md`](docs/GLOSSARY.zh-en.md)
 >
-> **Status**: English front page, draft (2026-09-25). The body is written in Chinese. License and attribution are pending.
+> **Status**: English front page, draft (2026-09-25). The body is written in Chinese. Code is **Apache-2.0** ([`LICENSE`](LICENSE)); documents and data are **CC-BY-4.0** ([`LICENSE-docs`](LICENSE-docs)). Attribution: `laa1991`. Not published yet.
 
 ## What this is
 
@@ -56,7 +56,7 @@ empty scaffolding behind — an empty directory reads as "not written yet".
 
 | Path | What it is |
 |---|---|
-| [`README.md`](README.md) | the Chinese front page (the full version) |
+| [`README.zh.md`](README.zh.md) | the Chinese front page (the full version) |
 | [`docs/00-位置与对照.md`](docs/00-位置与对照.md) | where this sits relative to adjacent public work, with verbatim quotes and line numbers |
 | [`docs/01-四格.md`](docs/01-四格.md) | the four failure modes, their carriers, and the readings behind them |
 | [`docs/02-模块-pointer.md`](docs/02-模块-pointer.md) | the continuation pointer: shape and conventions |
@@ -88,5 +88,8 @@ spots; anything not measured is marked as not measured.
 
 ## License and attribution
 
-Pending — see [`LICENSE`](LICENSE) and [`CITATION.cff`](CITATION.cff). Until the owner signs off,
-nothing here is licensed for use.
+- **Code**: Apache-2.0 — see [`LICENSE`](LICENSE).
+- **Documents and data**: CC-BY-4.0 — see [`LICENSE-docs`](LICENSE-docs).
+- **Attribution**: `laa1991` — see [`CITATION.cff`](CITATION.cff).
+
+Not published yet: this repository exists locally, and nothing has been pushed.

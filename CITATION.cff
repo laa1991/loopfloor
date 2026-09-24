@@ -1,13 +1,14 @@
-# 占位：authors / license / repository-code 由业主拍板后替换。
-# 在拍板之前，本文件不构成任何引用格式的承诺。
+# Attribution decided 2026-09-25: handle `laa1991` (no real name, no ORCID).
 cff-version: 1.2.0
-message: "If you use this material, cite it as below (fields marked 待定 are not final)."
+message: "If you use this material, cite it as below."
 title: "loopfloor — long-horizon work, and how it fails quietly"
 abstract: >-
   A field guide to the four ways long-horizon work fails quietly - context overflow,
   lost state, goal drift, and false completion - with the criteria that make each one
   speak up instead of failing silently.
-repository-code: "<待定：公开仓地址>"
-license: "<待定>"
+repository-code: "https://github.com/laa1991/loopfloor"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
 authors:
-  - name: "<待定>"
+  - name: "laa1991"
