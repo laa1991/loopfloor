@@ -63,18 +63,21 @@ empty scaffolding behind — an empty directory reads as "not written yet".
 | [`docs/03-模块-task-surface.md`](docs/03-模块-task-surface.md) | externalized task state: shape and conventions |
 | [`docs/04-模块-tooling.md`](docs/04-模块-tooling.md) | the tool surface: gating, loading, trimming |
 | [`docs/GLOSSARY.zh-en.md`](docs/GLOSSARY.zh-en.md) | fixed Chinese → English terminology |
-| [`demo/`](demo/) | a runnable replay demo (`node check.mjs`, exit code is the verdict) |
+| [`demo/`](demo/) | a runnable replay demo (`node demo/check.mjs` from the repository root, exit code is the verdict) |
 
 ## The demo, and what it does not show
 
 ```sh
-cd demo
-node check.mjs
+node demo/check.mjs        # from the repository root; exit code is the verdict
 ```
 
-Four criteria, all machine-checkable: the same append-only log folded twice comes out **byte-identical**;
-the world can be rewound (`--as-of 5`, before the evidence exists); the full replay has the evidence;
-and the goal's closing condition **names an external object**.
+**Seven criteria, two of which are negative controls.** The reason: some checks *cannot fail* —
+"the same input replayed twice gives the same output" passes for **any** deterministic function — so a
+check like that is a smoke test, not evidence. Each such check therefore ships with a neighbour that
+**must fail**: the fold must read nothing outside the log (no clock, randomness, environment, network),
+and the same scan has to fire on a deliberately tainted copy of that source. Likewise the closing line
+must cite a record that **exists and is not the completion itself** — and a log that cites nothing is
+its negative control. **What each criterion does *not* prove** is written down in `demo/README.md`.
 
 What it does **not** show: there is no model in that demo. It measures where recomputability *ends*,
 and the answer is unexpectedly simple — **you can recompute exactly what the log recorded, and
