@@ -4,7 +4,7 @@
 
 > [中文 README](README.zh.md) · body of the material: [`docs/`](docs/) · fixed terminology: [`docs/GLOSSARY.zh-en.md`](docs/GLOSSARY.zh-en.md)
 >
-> **Status**: English front page, draft (2026-09-25). The body is written in Chinese. Code is **Apache-2.0** ([`LICENSE`](LICENSE)); documents and data are **CC-BY-4.0** ([`LICENSE-docs`](LICENSE-docs)). Attribution: `laa1991`. Not published yet.
+> **Status**: v1 (2026-09-25). English front page; the body is written in Chinese. Code is **Apache-2.0** ([`LICENSE`](LICENSE)); documents and data are **CC-BY-4.0** ([`LICENSE-docs`](LICENSE-docs)). Attribution: `laa1991`. Public: <https://github.com/laa1991/loopfloor>.
 
 ## What this is
 
@@ -92,4 +92,5 @@ spots; anything not measured is marked as not measured.
 - **Documents and data**: CC-BY-4.0 — see [`LICENSE-docs`](LICENSE-docs).
 - **Attribution**: `laa1991` — see [`CITATION.cff`](CITATION.cff).
 
-Not published yet: this repository exists locally, and nothing has been pushed.
+Published: <https://github.com/laa1991/loopfloor> — public, default branch `main`. The commit identities
+were settled **before** the first push, not rewritten after it.

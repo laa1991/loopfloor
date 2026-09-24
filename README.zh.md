@@ -6,7 +6,7 @@
 
 > **English front page**: [`README.md`](README.md) · **固定译法**：[`docs/GLOSSARY.zh-en.md`](docs/GLOSSARY.zh-en.md)（中→英，一经定下即沿用）
 >
-> **状态**：v1 草稿（2026-09-25）。**代码 Apache-2.0**（`LICENSE`）/ **文档与数据 CC-BY-4.0**（`LICENSE-docs`）；署名 `laa1991`；本仓尚未公开。
+> **状态**：v1（2026-09-25）。**代码 Apache-2.0**（`LICENSE`）/ **文档与数据 CC-BY-4.0**（`LICENSE-docs`）；署名 `laa1991`；**已公开**：<https://github.com/laa1991/loopfloor>。
 > **读法**：这份材料给的是**尺**（口径、判据、失败样本），不是**手**（可直接跑的实现）。理由见 §6。
 
 ---
