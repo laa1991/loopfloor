@@ -1,0 +1,6 @@
+{"seq":1,"type":"session/start","data":{"note":"synthetic sample — not real data"}}
+{"seq":2,"type":"tool/call","data":{"name":"read"}}
+{"seq":3,"type":"tool/call","data":{"name":"read"}}
+{"seq":4,"type":"tool/call","data":{"name":"grep"}}
+{"seq":5,"type":"assistant/message","data":{"text":"a line that merely mentions tool/call in prose"}}
+{"seq":6,"type":"tool/call","data":{"name":"consult"}}

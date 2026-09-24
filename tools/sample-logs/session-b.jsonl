@@ -1,0 +1,5 @@
+{"seq":1,"type":"tool/call","data":{"name":"read"}}
+{"seq":2,"type":"tool/call","data":{"name":"bash"}}
+{"seq":3,"type":"tool/call","data":{}}
+{"seq":4,"type":"tool/call","data":{"name":""}}
+this line is not JSON at all
