@@ -1,0 +1,34 @@
+# 凭据与密钥 —— 任何一个都不许进仓
+*.credentials*
+*.credentials.*
+.env
+.env.*
+*.pem
+*.p12
+*.pfx
+*.key
+id_rsa*
+*_rsa
+
+# 本地路径与临时产物
+*.local
+*.local.*
+*.tmp
+*.bak
+*~
+.artifacts/
+
+# 日志
+*.log
+logs/
+
+# 编辑器与系统
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# 依赖与构建产物（本仓当前零依赖，留着以防）
+node_modules/
+dist/
