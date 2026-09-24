@@ -41,7 +41,7 @@
 | 破前缀 / 不破前缀 | **breaks / preserves the prompt prefix** | 改一个字节，代价是其后的全部历史 |
 | 放尺留手 | **ship the ruler, not the hand** | 交口径与判据，不交依赖本部署的实现 |
 | 盲区 | **blind spot** | 每个读数都要带它写不出来什么 |
-| 台账 | **ledger** | |
+| 账本 | **ledger** | 正文统一用「账本」（「台账」同义，不另立条目） |
 | 预注册 | **pre-registration** | 先写下预期，再去跑 |
 | 会话 · 窗口 · 换代 | **session** · **window** · **generation change** | 换代 = 进程重启/恢复，任务态要活过它 |
 | 责任面 | **where the weight lands** | 见下 |
