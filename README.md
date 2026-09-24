@@ -62,6 +62,7 @@ empty scaffolding behind — an empty directory reads as "not written yet".
 | [`docs/02-模块-pointer.md`](docs/02-模块-pointer.md) | the continuation pointer: shape and conventions |
 | [`docs/03-模块-task-surface.md`](docs/03-模块-task-surface.md) | externalized task state: shape and conventions |
 | [`docs/04-模块-tooling.md`](docs/04-模块-tooling.md) | the tool surface: gating, loading, trimming |
+| [`docs/05-尺自己也会安静地错.md`](docs/05-尺自己也会安静地错.md) | when the **ruler** fails quietly: three criteria, one measurement convention, one first-hand instance |
 | [`docs/GLOSSARY.zh-en.md`](docs/GLOSSARY.zh-en.md) | fixed Chinese → English terminology |
 | [`demo/`](demo/) | a runnable replay demo (`node demo/check.mjs` from the repository root, exit code is the verdict) |
 

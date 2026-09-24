@@ -136,7 +136,7 @@
 | survey 命题句与六节 | `github.com/RUC-NLPIR/Awesome-Long-Horizon-Agents` | `docs/00-位置与对照.md` |
 | 三角色与验收方式 | `github.com/AMAP-ML/LongHorizon-Harness` | 同上 |
 
-**仓内导航**：`docs/00-位置与对照.md`（引文逐字 + 出处）· `docs/01-四格.md`（四格骨架与读数）· `docs/02-模块-pointer.md` / `docs/03-模块-task-surface.md` / `docs/04-模块-tooling.md`（三个模块协议）· `demo/README.md`（可回放演示；**`node demo/check.mjs`**——从仓根跑，exit code 即判决）。
+**仓内导航**：`docs/00-位置与对照.md`（引文逐字 + 出处）· `docs/01-四格.md`（四格骨架与读数）· `docs/02-模块-pointer.md` / `docs/03-模块-task-surface.md` / `docs/04-模块-tooling.md`（三个模块协议）· `docs/05-尺自己也会安静地错.md`（**尺**也会安静地坏：三条判据、一条测量约定、一处自家实例）· `demo/README.md`（可回放演示；**`node demo/check.mjs`**——从仓根跑，exit code 即判决）。
 
 ## 8. 已定（2026-09-25 拍板）
 
