@@ -39,7 +39,7 @@
 | 懒装载 | **lazy loading** | |
 | 瘦身 | **trimming** | 工具面的瘦身必须带前后读数 |
 | 破前缀 / 不破前缀 | **breaks / preserves the prompt prefix** | 改一个字节，代价是其后的全部历史 |
-| 放尺留手 | **ship the ruler, not the hand** | 交口径与判据，不交依赖本部署的实现 |
+| 放尺留手 | **ship the ruler, not the hand** | 交口径与判据，不交依赖本部署的实现。⚠️ 英文里 `hand` 会被读成「人手」⇒ 英文正文中**必须紧跟一句** `a criterion, not an implementation` |
 | 盲区 | **blind spot** | 每个读数都要带它写不出来什么 |
 | 账本 | **ledger** | 正文统一用「账本」（「台账」同义，不另立条目） |
 | 预注册 | **pre-registration** | 先写下预期，再去跑 |

@@ -12,7 +12,7 @@ A field guide to one layer of agent systems: **what sits between the scheduler a
 
 Long-horizon work fails in ways that **do not throw**. Nothing errors, nothing retries, nothing turns red; the result just quietly becomes something else. This repository collects the failure modes, the criteria that make them visible, and the smallest runnable pieces we could hand over.
 
-**We ship the ruler, not the hand.** Everything here is a criterion, a shape, or a measurement convention — plus one runnable demo. The implementations that produced these readings stay where they are.
+**We ship the ruler, not the hand** — a criterion, not an implementation. Everything here is a shape, a measurement convention, or one runnable demo; the implementations that produced these readings stay where they are.
 
 ## The four ways it breaks quietly
 
