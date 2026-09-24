@@ -1,0 +1,10 @@
+{"seq":1,"type":"goal/set","what":"ship the demo without leaking anything"}
+{"seq":2,"type":"next/write","doing":"wrote the fold","next":"run it twice and compare","waiting":false}
+{"seq":3,"type":"plan/write","items":[{"content":"write the fold","status":"done"},{"content":"run it twice and compare","status":"open"}]}
+{"seq":4,"type":"decision/log","chose":"byte-identical output as the criterion","because":"a criterion a human has to judge is not a criterion"}
+{"seq":5,"type":"tool/call","name":"node fold.mjs","exitCode":0}
+{"seq":6,"type":"job/settled","id":"j1","status":"ok","evidence":"sha256(run A) == sha256(run B)"}
+{"seq":7,"type":"note","text":"why seq 5 was run is not in this log - the log records what happened, not what was intended"}
+{"seq":8,"type":"compaction/summary","text":"earlier steps were summarized; the events themselves are still here"}
+{"seq":9,"type":"next/clear"}
+{"seq":10,"type":"goal/complete","how":"done - trust me"}

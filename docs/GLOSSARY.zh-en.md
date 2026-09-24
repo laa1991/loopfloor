@@ -44,7 +44,6 @@
 | 账本 | **ledger** | 正文统一用「账本」（「台账」同义，不另立条目） |
 | 预注册 | **pre-registration** | 先写下预期，再去跑 |
 | 会话 · 窗口 · 换代 | **session** · **window** · **generation change** | 换代 = 进程重启/恢复，任务态要活过它 |
-| 责任面 | **where the weight lands** | 见下 |
 | 人格核心 | **persona core** | 只在边界声明里出现（本仓不搬它，见 README §0，那里说了可以私下聊） |
 
 ## 两处刻意不直译
