@@ -91,6 +91,12 @@ Batch 1: shapes, conventions and one runnable demo. Implementation code is not p
 The readings in `docs/` carry their measurement conventions, how to recompute them, and their blind
 spots; anything not measured is marked as not measured.
 
+**What the readings measure — and what they do not.** Every reading here measures whether state is
+*visible*: does the pointer come back, does the card reappear, is the gap named. None of them measures
+whether the decision was *right*, or what it cost. That line is **a boundary we chose, not a reach we
+missed** — judging direction needs a different apparatus (same model, same execution backend, only the
+harness changed, plus a third-party scorer). Please do not read it as a shortfall.
+
 ## License and attribution
 
 - **Code**: Apache-2.0 — see [`LICENSE`](LICENSE).
