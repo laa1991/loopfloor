@@ -51,3 +51,54 @@ mentions `tool/call`). They contain no real data.
 
 This is the ruler used for the readings in this repository, with the deployment-specific default
 path removed: the log directory is an argument now, and nothing else about the counting changed.
+
+## `check-pointer-continuity.mjs`
+
+Asks one question of a JSONL log: **after a seam** (a window switch, a restart, a compaction), **does
+the input at that seam say (1) what was last done, (2) what it is waiting on, (3) why the next step
+follows?** States: ✅ `0` · ⚠️ `3` · ❌ `1` · ⚪ `4` not judgeable / not applicable — **⚪ is counted
+separately and is not a pass**.
+
+```sh
+node check-pointer-continuity.mjs --selftest                    # 10 built-in fixtures; exit code is the verdict
+node check-pointer-continuity.mjs --log pointer-sample.jsonl --first-round
+```
+
+Input: one JSON object per line, `{"time": <ISO string or epoch ms>, "who": "...", "text": "..."}`.
+You only need an **adapter** for your own logs; the criterion does not change.
+**The word forms are a contract, not a constant** — the defaults are the ones from our own logs, so
+override them before you measure anything else:
+
+```sh
+node check-pointer-continuity.mjs --log your.jsonl --patterns your-patterns.json
+```
+
+`--patterns` takes `{position, waiting, why, command, artifactShape, pathChars}`, each a regex source.
+
+**Reading the output**: the run lists *every* record in the seam round with its own ✅/❌ — including the
+record that merely *marks* the seam. **Read the verdict line, not the per-record lines**: the criterion
+takes the **best** record, because the question is whether *anything at all* is there.
+
+## `check-compaction-accounting.mjs`
+
+Asks: **after a compaction, does anything say what was dropped — and can it be retrieved?** (Verbatim
+from an external survey's own gap statement: *whether a scheme knows what it dropped, whether it can
+get it back*.) States: ✅ `0` an account **with** a retrievable pointer · ⚠️ `3` an account, no pointer ·
+❌ `1` compacted with no account at all · ⚪ `4` no recognisable boundary.
+
+```sh
+node check-compaction-accounting.mjs --selftest                  # 6 built-in fixtures
+node check-compaction-accounting.mjs --log compaction-sample.jsonl
+```
+
+Same input contract; `--patterns {boundaryWho, boundaryRe, accountRe, pointerRe}`. It **reports the
+lag** between a boundary and its account — a reading, not a defect (in our own logs that lag ranged
+from 19s to 725s) — and it takes the **worst** boundary: the question is whether *any* compaction
+went unaccounted.
+
+### Origin (both)
+
+These are the two rulers behind [`docs/07`](../docs/07-两条判据的问法.md). Sanitised for shipping (no
+deployment paths, no session data; the bundled samples are synthetic and in English), and **not**
+claimed portable: at the time of writing they had been run against **one** producer's logs, so the
+independent-vote count is still **0** (`docs/07` §6).

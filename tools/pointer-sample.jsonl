@@ -1,0 +1,2 @@
+{"time":"2026-01-02T10:00:00Z","who":"scheduler","text":"Window switched to a fresh context."}
+{"time":"2026-01-02T10:00:02Z","who":"handoff","text":"Last step: 3/5 done, current artifact docs/02-contract.md. Waiting on the reviewer's reply before the next edit. Next: update docs/02-contract.md because the schema changed."}
