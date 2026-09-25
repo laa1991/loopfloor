@@ -177,13 +177,13 @@ function selectWindow(sorted, afterMs, o) {
     afterMs === undefined || Number.isNaN(afterMs) ? true : toMs(r.time) > afterMs,
   )
   if (o.mode === 'round') {
-    if (rest.length === 0) return { group: [], how: `缝后第一轮（链 ≤${o.burstSec}s，空）` }
+    if (rest.length === 0) return { group: [], how: `切换之后的第一轮（链 ≤${o.burstSec}s，空）` }
     const out = [rest[0]]
     for (let i = 1; i < rest.length; i += 1) {
       if (toMs(rest[i].time) - toMs(out[out.length - 1].time) <= o.burstSec * 1000) out.push(rest[i])
       else break
     }
-    return { group: out, how: `缝后第一轮（链 ≤${o.burstSec}s）` }
+    return { group: out, how: `切换之后的第一轮（链 ≤${o.burstSec}s）` }
   }
   if (o.windowSec > 0 && afterMs !== undefined && !Number.isNaN(afterMs)) {
     return {
@@ -205,12 +205,12 @@ function selftest(asJson) {
   }
   // ── 选择层的两侧对照（2026-09-25 加）───────────────────────────────────────
   // 为什么必须加在这一层：v3 那一刀的**刀口在选择上**，不在判分上 —— 逐条判分早就是对的，
-  // 错的是「把哪几条算作一轮」。判分器开火证明不了选择没错，所以要在选择层开一次火。
+  // 错的是「把哪几条算作一轮」。判分器触发证明不了选择没错，所以要在选择层开一次火。
   const rankOf = (s) => ({ '✅': 3, '⚠️': 2, '❌': 1, '⚪': 0 })[s]
   const b = (time, who, text) => ({ time, who, text })
   const SELECT_FIXTURES = [
     {
-      name: '缝后第一轮里就有载体（正对照，该亮）',
+      name: '切换之后的第一轮里就有载体（正对照，该亮）',
       expect: '✅',
       mode: 'round',
       windowSec: 0,
@@ -221,7 +221,7 @@ function selftest(asJson) {
       after: '2026-09-25T10:00:00+08:00',
     },
     {
-      name: '缝后第一轮干净、载体在第二轮（负对照，该灭）',
+      name: '切换之后的第一轮干净、载体在第二轮（负对照，该灭）',
       expect: '❌',
       mode: 'round',
       windowSec: 0,
@@ -234,9 +234,9 @@ function selftest(asJson) {
     },
     // 真实形状（B 撞点复刻，2026-09-25 实测）：**锚点与第一轮隔了 113 秒** ——
     // 旧刀从「我手选的那个时间戳」起数 60s ⇒ 一条都没吃到 ⇒ 走回退、判在那条不带载体的记录上（❌）；
-    // 新刀从「缝后**第一条**」起吃整簇 ⇒ 吃到载体（✅）。**旧刀的病根是锚点，不是窗宽。**
+    // 新刀从「切换之后**第一条**」起吃整簇 ⇒ 吃到载体（✅）。**旧刀的病根是锚点，不是窗宽。**
     {
-      name: '真实形状 · 新刀（从缝后第一条起吃整簇）⇒ 该亮',
+      name: '真实形状 · 新刀（从切换之后第一条起吃整簇）⇒ 该亮',
       expect: '✅',
       mode: 'round',
       windowSec: 0,
@@ -263,7 +263,7 @@ function selftest(asJson) {
   for (const f of SELECT_FIXTURES) {
     const sf = [...f.records].sort((x, y) => toMs(x.time) - toMs(y.time))
     const sel = selectWindow(sf, toMs(f.after), { mode: f.mode, windowSec: f.windowSec, burstSec: 5 })
-    // ⚠️ 必须复刻 CLI 的**回退**：窗内为空时判「缝后第一条」，不是判空（我第一版漏了这行 ⇒ 假 FAIL）
+    // ⚠️ 必须复刻 CLI 的**回退**：窗内为空时判「切换之后第一条」，不是判空（我第一版漏了这行 ⇒ 假 FAIL）
     const judgeSet =
       sel.group.length > 0
         ? sel.group
@@ -325,11 +325,11 @@ if (first === undefined) {
 // v1 更正（2026-09-25，真物撞出来的）：接续点**不是一个「第一条记录」，是同一轮的**一批**——
 // dsh 实测：11:31:41 那一刻 `next-pointer` 注入与工作台卡片挨着落地，只看排在前面的那条会误判 ❌。
 // 口径：`--window-sec N`（>0）把接续点后 N 秒内的记录**并成一条**再判（模型当时看到的是并集）。
-// v3（2026-09-25，**外部尺换来的那一刀**）：窗口的单位从「秒」换成「**轮**」。
+// v3（2026-09-25，**外部量具换来的那一刀**）：窗口的单位从「秒」换成「**轮**」。
 // 依据：AMAP `tests/test_resume.py` 逐字判据 ——「停之前发出去的话，必须落到**紧接着的那一轮**」
 // （`a_message_sent_before_a_stop_reaches_the_very_next_round`），单位是 round、不是 sec。
 // 实测（your-logs.jsonl 的 A 撞点）：一轮 = 一簇**同时**的注入（+37s 十连发；下一轮 +46s 三条；
-// 再 +53s 一条）⇒ 「缝后的第一轮」= 从缝后第一条起沿 `--burst-sec`（默认 5s）的间隔链往前吃，链断即止。
+// 再 +53s 一条）⇒ 「切换之后的第一轮」= 从切换之后第一条起沿 `--burst-sec`（默认 5s）的间隔链往前吃，链断即止。
 // 旧口径 `--window-sec` 保留（用来对照）：它会把**后面几轮**的东西算进来 —— A 的 ✅ 归给 `the-reporter`
 // 正是这个病（那一簇里工作台卡片和指针都在，却让别的记录拿了最好那条）。
 const windowSec = Number(opt('--window-sec', '0'))

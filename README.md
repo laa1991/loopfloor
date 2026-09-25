@@ -12,7 +12,7 @@ A field guide to one layer of agent systems: **what sits between the scheduler a
 
 Long-horizon work fails in ways that **do not throw**. Nothing errors, nothing retries, nothing turns red; the result just quietly becomes something else. This repository collects the failure modes, the criteria that make them visible, and the smallest runnable pieces we could hand over.
 
-**We ship the ruler, not the hand** — a criterion, not an implementation. Everything here is a shape, a measurement convention, or one runnable demo; the implementations that produced these readings stay where they are.
+**We ship the measurement, not the implementation** — a criterion, not an implementation. Everything here is a shape, a measurement convention, or one runnable demo; the implementations that produced these readings stay where they are.
 
 > **"Isn't this just harness compaction + a notes vault + skills + AGENT.md + hooks + CI?"** — we get asked this, so it has its own section: §2.2 of [`README.zh.md`](README.zh.md). Short version: that stack manages *what is on disk* and *what to block at commit time*; this repository is about *what is in front of the model right now*, and about a criterion that fires **at the seam**. If your stack re-injects the next step every turn, it covers part of cells 1–2 — what stays open is **who re-pins after a compaction**, and whether there is a criterion at all.
 
@@ -64,7 +64,7 @@ empty scaffolding behind — an empty directory reads as "not written yet".
 | [`docs/02-模块-pointer.md`](docs/02-模块-pointer.md) | the continuation pointer: shape and conventions |
 | [`docs/03-模块-task-surface.md`](docs/03-模块-task-surface.md) | externalized task state: shape and conventions |
 | [`docs/04-模块-tooling.md`](docs/04-模块-tooling.md) | the tool surface: gating, loading, trimming |
-| [`docs/05-尺自己也会安静地错.md`](docs/05-尺自己也会安静地错.md) | when the **ruler** fails quietly: three criteria, one measurement convention, one first-hand instance |
+| [`docs/05-尺自己也会安静地错.md`](docs/05-尺自己也会安静地错.md) | when the **measurement** goes quietly wrong: three criteria, one measurement convention, one first-hand instance |
 | [`docs/06-最简实现公式.md`](docs/06-最简实现公式.md) | the minimal formula: three pieces, and the reasons behind each |
 | [`docs/07-两条判据的问法.md`](docs/07-两条判据的问法.md) | two criteria stated as a **port contract** — what each asks, the three states, why one takes the best record and one the worst, and the negative-control rule. Scripts ship in `tools/` with a minimal sample log, but with **no portability claim**: so far 0 independent producers have been hit |
 | [`docs/GLOSSARY.zh-en.md`](docs/GLOSSARY.zh-en.md) | fixed Chinese → English terminology |
